@@ -1,0 +1,14 @@
+<h1>Create a Document</h1>
+
+<%= form_for @document do |d| %>
+
+	<p>
+		<%= d.label      :nome %>
+		<%= d.text_field :nome %>
+		<br>
+		<%= d.label      :tipo %>
+		<%= d.text_field :tipo %>
+	</p>
+	<p><%= d.submit %></p>
+
+<% end %>
