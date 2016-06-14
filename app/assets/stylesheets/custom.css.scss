@@ -1,0 +1,135 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* CSS PAGINA INICIAL - HOME.HTML.ERB */
+
+.dropdown {
+  
+}
+.dropdown-menu>li>a {
+    
+}
+
+.dropdown ul.dropdown-menu {
+    border-radius:4px;
+    box-shadow:none;
+    margin-top:10px;
+    width:200px;
+}
+
+.logoimg img {
+  float: center;
+  width: 310px;
+  height: 59px;
+  background: transparent;
+  z-index: -1;
+  margin-top: 25px;
+  margin-bottom: 15px;
+}
+
+.bg1 {
+  background: url(asset-path('contract_bg1.jpg')) no-repeat center center fixed;
+  color:#fff;
+  background-size:cover;
+}
+
+.bg2 {
+  background: url(asset-path('contract_bg1.jpg')) no-repeat center center fixed;
+  color:#fff;
+  background-size:cover;
+}
+
+.social img {
+  margin-left: 5px;
+  margin-right: 2px;
+}
+
+.divider {
+    height:50px;
+}
+
+article {
+    height:350px;
+    padding-top:70px;
+    padding-bottom:10px;
+    overflow:auto;
+}
+
+aside {
+    height: 850px;
+    padding-top:50px;
+    padding-bottom:10px;
+    overflow:auto;
+}
+
+#footer {
+    height: 90px;
+    background-color:#E7E7E7;
+    margin-top:5px;
+    padding-top:20px;
+    padding-bottom:20px;
+}
+
+#footer a {
+  color:#E7E7E7;
+
+}
+
+/* CSS PAGINA CONTRATOS - contractsHome.HTML.ERB */
+
+.logoNav img {
+  float: center;
+  margin-top: 8px;
+  margin-bottom: 2px;
+}
+
+.FormNav {
+  margin-left: 10px;
+}
+
+.tresColunas{
+
+}
+
+section {
+    padding-top:55px;
+    padding-bottom:10px;
+    overflow:auto;
+}
+
+.box-shadow--2dp {
+
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+    padding-bottom: 50%;
+    
+}
+
+.box-shadow--3dp {
+    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, .14), 0 3px 3px -2px rgba(0, 0, 0, .2), 0 1px 8px 0 rgba(0, 0, 0, .12)
+}
+.box-shadow--4dp {
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12), 0 2px 4px -1px rgba(0, 0, 0, .2)
+}
+.box-shadow--6dp {
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12), 0 3px 5px -1px rgba(0, 0, 0, .2)
+}
+.box-shadow--8dp {
+    box-shadow: 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12), 0 5px 5px -3px rgba(0, 0, 0, .2)
+}
+.box-shadow--16dp {
+    box-shadow: 0 16px 24px 2px rgba(0, 0, 0, .14), 0 6px 30px 5px rgba(0, 0, 0, .12), 0 8px 10px -5px rgba(0, 0, 0, .2)
+}
+
+#basedOnClickForm {
+  display:none;
+}
+
+.panelOffset{
+  
+  padding-top: 50px;
+
+}
+
+.control-label{
+     color: black !important; // some color
+}

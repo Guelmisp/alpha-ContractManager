@@ -11,13 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160602172531) do
+ActiveRecord::Schema.define(version: 20160610005911) do
 
   create_table "documents", force: :cascade do |t|
-    t.string   "nome"
-    t.string   "tipo"
+    t.string   "name"
+    t.string   "tag"
+    t.string   "typeDoc"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "uploaded_file_file_name"
+    t.string   "uploaded_file_content_type"
+    t.integer  "uploaded_file_file_size"
+    t.datetime "uploaded_file_updated_at"
+    t.integer  "user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "username"
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "password_digest"
   end
 
 end

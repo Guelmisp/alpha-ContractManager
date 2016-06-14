@@ -1,0 +1,26 @@
+
+
+<div class="container">
+  <div class="panelOffset">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="panel panel-primary "> 
+        
+        <h1 align="center">Bem vindo a sua página <%=@user.username%> </h1>
+          
+          <div class="panel-body">
+
+          <center><%= gravatar_for @user %></center>
+          <br>
+          <h4>Nome: <%=@user.username%></h4>
+          <br>
+          <h4>Email: <%=@user.email%></h4>
+
+          <%= render 'documents/document', obj: @user.documents %>
+ 
+          </div>
+
+        </div>
+
+    </div>
+  </div>
+</div>

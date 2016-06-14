@@ -1,0 +1,43 @@
+<h1>Edicao de Documento</h1>
+
+<%= simple_form_for @document do |f| %>
+
+    <%= f.input :name,
+        label: 'Nome do Arquivo: ',
+        placeholder: 'Digite o nome do arquivo',
+        error: 'O Nome do arquivo é obrigatório' %>
+
+    <%= f.input :tag,
+        label: 'Tags de busca: ',
+        placeholder: 'Por exemplo: compra e venda, autocad, maio de 2016',
+        hint: 'As tags serão úteis na hora de buscar seus arquivos',
+        error: 'tags são obrigatórias' %>
+
+    <div class="field">
+        <%= f.label :typeDoc,
+        label: 'Tipo do Arquivo'%>
+        <br>
+        <%= f.radio_button :typeDoc, 'Compra e Venda'%> 
+        <span class="label label-primary">Compra e Venda</span>
+        <br>
+        <%= f.radio_button :typeDoc, 'Pessoal'%> 
+        <span class="label label-warning">Pessoal</span>
+        <br>
+        <%= f.radio_button :typeDoc, 'Aluguel'%> 
+        <span class="label label-info">Aluguel</span>
+        <br>
+        <%= f.radio_button :typeDoc, 'Contas'%> 
+        <span class="label label-success">Contas</span>
+        <br>
+        <%= f.radio_button :typeDoc, 'Outros'%> 
+        <span class="label label-default">Outros</span>
+        <br>
+    </div>
+
+    <br><br><br>
+    <center>
+         <button type="submit" class="btn btn-success">Atualizar</button>
+        <%= link_to "Cancelar", :back, {:class=>"btn btn-default"} %>
+    </center>
+
+<% end %>
