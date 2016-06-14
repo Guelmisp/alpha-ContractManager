@@ -15,8 +15,10 @@
           <br>
           <h4>Email: <%=@user.email%></h4>
 
-          <%= render 'documents/document', obj: @user.documents %>
- 
+          <%= will_paginate @user_documents %>
+          <%= render 'documents/document', obj: @user_documents %>
+          <%= will_paginate @user_documents %>
+
           </div>
 
         </div>
