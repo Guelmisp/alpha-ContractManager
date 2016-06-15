@@ -3,6 +3,12 @@
 
 /* CSS PAGINA INICIAL - HOME.HTML.ERB */
 
+html, body {
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
 .dropdown {
   
 }
@@ -62,17 +68,21 @@ aside {
     overflow:auto;
 }
 
-#footer {
-    height: 90px;
-    background-color:#E7E7E7;
-    margin-top:5px;
-    padding-top:20px;
-    padding-bottom:20px;
+footer {
+  padding: 30px 0 45px;
+  position: relative;
+  width: 100%;
+  background: #d4d4d4;
 }
 
-#footer a {
-  color:#E7E7E7;
-
+footer .list-inline {
+  margin: 0;
+  padding: 0;
+}
+footer .copyright {
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 0;
 }
 
 /* CSS PAGINA CONTRATOS - contractsHome.HTML.ERB */
@@ -98,9 +108,14 @@ section {
 }
 
 .box-shadow--2dp {
-
+    
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
-    padding-bottom: 50%;
+    min-height: 100%;
+    padding-bottom:50%;
+
     
 }
 

@@ -10,6 +10,7 @@
 	  </thead>
 	  <tbody>
 	  <% obj.each do |document| %>
+	  	<%if logged_in? && current_user == document.user %>
 	    <tr>
 	      <td><%= check_box_tag "documents_ids[]", document.id %></td>
 	      <td><%= link_to 'Doc', document.uploaded_file.url %></td>
@@ -29,6 +30,7 @@
 	      </td>
 	      <td><%= document.created_at %></td>
 	    </div>
+	  <% end %>
 	  <% end %>
 	  </tbody>
 </table>

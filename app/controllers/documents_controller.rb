@@ -16,7 +16,7 @@ class DocumentsController < ApplicationController
 
 	def create
 		@document = Document.new(document_params)
-		@document.user = User.first
+		@document.user = current_user
 		if @document.save
 			flash[:notice] = "O Documento foi salvo com sucesso"
 			redirect_to contractsHome_path(@document)
@@ -57,11 +57,11 @@ class DocumentsController < ApplicationController
 	end
 
 	private
-		def set_document
-			@document = Document.find(params[:id])	
-		end
-		def document_params
-			params.require(:document).permit(:name, :tag, :typeDoc, :uploaded_file)
-		end
+	def set_document
+		@document = Document.find(params[:id])	
+	end
+	def document_params
+		params.require(:document).permit(:name, :tag, :typeDoc, :uploaded_file)
+	end
  
 end

@@ -1,36 +1,10 @@
-<!-- NavBar -->
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <ul class="nav navbar-nav navbar-left">  
-    <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-menu-hamburger"> LifeHistory</span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Health <span class="glyphicon glyphicon-cog pull-right"></span></a></li>
-            <li class="divider"></li>
-            <li><a href="#">Contracts<span class="glyphicon glyphicon-cog pull-right"></span></a></li>
-       </ul>
-    </li>
-  </ul>
-
-  <ul class="nav navbar-nav navbar-right">
-      <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"> Usuário</span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Configurações <span class="glyphicon glyphicon-cog pull-right"></span></a></li>
-            <li class="divider"></li>
-            <li><a href="#">Sair <span class="glyphicon glyphicon-log-out pull-right"></span></a></li>
-          </ul>
-      </li>
-  </ul>
-</nav>
-<!-- /NavBar -->
-
-
 <!--parallax 1 -->
 <article class="bg1 text-center">
   <div class="logoimg"> <img src="assets/logo_cm.png" alt="logo" /></div>
   <p class="lead">Experimente uma nova ferramenta para a gestao de contratos e documentos.<br>
 ContractManager te ajudara e guiara na organizacao e manutencao!</p>
-  <p><%= link_to "Experimente", signup_path, class: "btn btn-primary" %></p>
+  <p><%= link_to "Registrar", signup_path, class: "btn btn-success" %>
+  <%= link_to "Entrar",    login_path, class: "btn btn-default" %></p>
 </article>
 <!--/parallax 1-->
 
@@ -117,30 +91,6 @@ ContractManager te ajudara e guiara na organizacao e manutencao!</p>
   </div>  
 </aside>
 <!--/parallax 2-->
-
-<!--/RODAPE-->
-<div id="footer">
-  <div class="container">
-    <div class="col-md-4">
-      <body bgcolor="#111111"/>
-      <p class="text-muted text-center">LifeHistory</p>
-    </div>
-    <div class="col-md-4">
-      <p class="text-muted text-center">Desenvolvedores:</p>
-      <p class="text-muted text-center">iMobilis - UFOP - ICEA</p>
-    </div>
-    <div class="col-md-4">
-      <div class="social text-right"> 
-        <a href="#" ><img src="assets/googleplus.png" alt="Google+" /></a>
-        <a href="#" ><img src="assets/facebook.png" alt="Facebook" /></a>
-        <a href="#" ><img src="assets/rss.png" alt="RSS" /></a>
-        </div>
-    </div>
-
-  </div>
-</div>
-<!--/RODAPE-->
-
 
 </body>
 </html>

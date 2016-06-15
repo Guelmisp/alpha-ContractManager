@@ -1,28 +1,40 @@
-
-
+<br><br><br>
 <div class="container">
-  <div class="panelOffset">
-    <div class="col-md-6 col-md-offset-3">
-      <div class="panel panel-primary "> 
-        
-        <h1 align="center">Bem vindo a sua página <%=@user.username%> </h1>
-          
-          <div class="panel-body">
-
-          <center><%= gravatar_for @user %></center>
-          <br>
-          <h4>Nome: <%=@user.username%></h4>
-          <br>
-          <h4>Email: <%=@user.email%></h4>
-
-          <%= will_paginate @user_documents %>
-          <%= render 'documents/document', obj: @user_documents %>
-          <%= will_paginate @user_documents %>
-
+  <div class="row">
+    <div class="col-md-9">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-12 lead">Perfil do Usuário </div>
           </div>
-
+          <div class="row">
+            <div class="col-md-4 text-center">
+             <%= gravatar_for @user if @user %>
+            </div>
+            <div class="col-md-8">
+              <div class="row">
+                <div class="col-md-12">
+                  <h1 class="only-bottom-margin"><%=@user.username%></h1>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <span class="text-muted">Email:</span> <%=@user.email%><br>
+                  <small class="text-muted">Created: <%=@user.created_at%></small>
+                </div>
+                <div class="col-md-6">
+                  <span class="text-muted">Total de Documentos:</span> <%= pluralize(@user.documents.count, "Documento") if @user.documents %><br>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <hr><button class="btn btn-default pull-right"><i class="glyphicon glyphicon-pencil"></i> Edit</button>
+            </div>
+          </div>
         </div>
-
+      </div>
     </div>
   </div>
 </div>
