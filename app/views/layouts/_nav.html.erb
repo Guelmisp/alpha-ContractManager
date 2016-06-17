@@ -1,7 +1,7 @@
 <!-- NavBar -->
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <ul class="nav navbar-nav navbar-left">  
-        <li><div class="logoNav"><img alt="ContractManager" src="assets/iconsCm/32x32.png"></center></div></li>
+        <li><div class="logoNav"> <%= image_tag "iconsCm/32x32.png"%> </center></div></li>
         <li> <a class="brand">ContractManager</a> </li>
         <li> <a href="#"></a></li>
         <li> <a href="#"></a></li>
@@ -24,14 +24,17 @@
           <ul class="dropdown-menu">
             <% if logged_in? %>
                <%= render 'users/show'%>
-               <li class="divider"></li>
-               <li><%= link_to "Editar Usuário", edit_user_path(current_user) %></li>
-               <li class="divider"></li>
-              <li><%= link_to 'Sair', logout_path, methode: :destroy %></li>
-            <% else %>
-              <li><%= link_to 'Entrar', login_path %></li>
+
               <li class="divider"></li>
-              <li><%= link_to 'Registrar', signup_url %></li>
+               <li> <i class="glyphicon glyphicon-user"> <%= link_to "Perfil", user_path(current_user) %> </i></li>
+               <li class="divider"></li>
+               <li> <i class="glyphicon glyphicon-edit"> <%= link_to "Editar Usuário", edit_user_path(current_user) %> </i></li>
+               <li class="divider"></li>
+              <li> <i class="glyphicon glyphicon-log-out">  <%= link_to 'Sair', logout_path, methode: :destroy %> </i></li>
+            <% else %>
+              <li> <i class="glyphicon glyphicon-log-in"> <%= link_to 'Entrar', login_path %> </i></li>
+              <li class="divider"></li>
+              <li> <i class="glyphicon glyphicon-pencil"> <%= link_to 'Registrar', signup_url %> </i></li>
             <% end %>
           </ul>
       </li>

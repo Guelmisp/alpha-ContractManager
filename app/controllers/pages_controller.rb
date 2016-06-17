@@ -4,7 +4,7 @@ class PagesController < ApplicationController
 	end
 	def contractsHome
 		@document  = Document.new
-		@documents = Document.all
+		@documents = Document.paginate(page: params[:page], per_page: 5)
 	end
 	def contractsAbout
 	end

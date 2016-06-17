@@ -1,36 +1,42 @@
-<aside class="bg2">
-  <div class="container">
-  <div class="panelOffset">
-    <div class="col-md-6 col-md-offset-3">
-      <div class="panel panel-primary "> 
-        <div class="panel-heading">
-            <h3 class="panel-title text-center">Log in</h3>
-        </div>
-          <div class="panel-body">
-            <div class="logoimg text-center"> <img src="assets/logo_cm_black.png" alt="logo" /></div><br>
-            <%= simple_form_for(:session, url: login_path) do |f| %>
+<% if logged_in? %>
+ 
+ <% controller.redirect_to contractsHome_path %>
+ 
+ <% else %>
+   <aside class="bg2">
+    <div class="container">
+    <div class="panelOffset">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="panel panel-primary "> 
+          <div class="panel-heading">
+              <h3 class="panel-title text-center">Log in</h3>
+          </div>
+            <div class="panel-body">
+              <div class="logoimg text-center"> <%= image_tag "logo_cm_black.png"%> </div><br>
+              <%= simple_form_for(:session, url: login_path) do |f| %>
 
-                <%= f.input :email,
-                    label: 'E-mail: ',
-                    placeholder: 'digite o seu e-mail',
-                    error: 'email obrigatorio' %>
+                  <%= f.input :email,
+                      label: 'E-mail: ',
+                      placeholder: 'digite o seu e-mail',
+                      error: 'email obrigatorio' %>
 
-                 <%= f.input :password, 
-                     label: 'Senha:',
-                     placeholder: 'digite a sua senha',
-                     autocomplete: 'off',
-                     error: 'O campo senha é obrigatório' %>
+                   <%= f.input :password, 
+                       label: 'Senha:',
+                       placeholder: 'digite a sua senha',
+                       autocomplete: 'off',
+                       error: 'O campo senha é obrigatório' %>
 
-                <br><br><br>
-                <center>
-                     <%= f.submit "Log in", class: 'btn btn-success' %>
-                     <%= link_to "Voltar", :back, {:class=>"btn btn-default"} %>
-                </center>
-            <% end %>
+                  <br><br><br>
+                  <center>
+                       <%= f.submit "Log in", class: 'btn btn-success' %>
+                       <%= link_to "Voltar", :back, {:class=>"btn btn-default"} %>
+                  </center>
+              <% end %>
+            </div>
+
           </div>
 
         </div>
-
-      </div>
-  </div>
-</aside>
+    </div>
+  </aside>
+<% end %>

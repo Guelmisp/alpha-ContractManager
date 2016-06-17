@@ -1,40 +1,47 @@
 <br><br><br>
-<div class="container">
-  <div class="row">
-    <div class="col-md-9">
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <div class="row">
-            <div class="col-md-12 lead">Perfil do Usuário </div>
-          </div>
-          <div class="row">
-            <div class="col-md-4 text-center">
-             <%= gravatar_for @user if @user %>
+<div id="wrap">
+  <div class="container">
+    <div class="row">
+        <div class="panel panel-default">
+          <div class="panel-body">
+
+            <div class="row">
+              <div class="col-md-12 lead"> Perfil do Usuário <hr> </div>
             </div>
-            <div class="col-md-8">
-              <div class="row">
-                <div class="col-md-12">
-                  <h1 class="only-bottom-margin"><%=@user.username%></h1>
+
+            <div class="row">
+              <div class="col-md-4 text-center">
+               <%= gravatar_for @user if @user %> <br>
+               <small><span class="text-muted">Imagem gerada pelo <a href="https://br.gravatar.com" >Gravatar</a> </span></small> 
+              </div>
+
+              <div class="col-md-8">
+                <div class="row">
+                  <div class="col-md-12">
+                    <h1 class="only-bottom-margin"><%=@user.username%></h1>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <span class="text-muted">Email:</span> <%=@user.email%><br>
+                    <small class="text-muted">Created: <%=@user.created_at%></small>
+                  </div>
+                  <div class="col-md-6">
+                    <span class="text-muted">Total de Documentos:</span> <%= pluralize(@user.documents.count, "Documento") if @user.documents %><br>
+                  </div>
                 </div>
               </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <span class="text-muted">Email:</span> <%=@user.email%><br>
-                  <small class="text-muted">Created: <%=@user.created_at%></small>
-                </div>
-                <div class="col-md-6">
-                  <span class="text-muted">Total de Documentos:</span> <%= pluralize(@user.documents.count, "Documento") if @user.documents %><br>
-                </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                 <hr><button class="btn btn-default pull-right"><i class="glyphicon glyphicon-pencil"></i> <%= link_to "Editar Usuário", edit_user_path(current_user) %> </button>
               </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12">
-              <hr><button class="btn btn-default pull-right"><i class="glyphicon glyphicon-pencil"></i> Edit</button>
-            </div>
+
           </div>
         </div>
-      </div>
     </div>
   </div>
 </div>

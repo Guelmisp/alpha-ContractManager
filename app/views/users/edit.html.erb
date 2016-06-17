@@ -7,7 +7,7 @@
             <h3 class="panel-title text-center">Editando sua Conta</h3>
         </div>
           <div class="panel-body">
-            <div class="logoimg text-center"> <img src="assets/logo_cm_black.png" alt="logo" /></div><br>
+            <div class="logoimg text-center"> <%= image_tag "logo_cm_black.png"%> </div><br>
             <%= simple_form_for @user do |f| %>
 
               <%= f.input :username,
