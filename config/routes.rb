@@ -13,6 +13,20 @@ Rails.application.routes.draw do
   get  'contractsAbout', to: 'pages#contractsAbout'
 
 
+  resources :documents do
+    collection do
+      delete 'destroy_multiple'
+    end
+  end
+
+  get 'signup', to: 'users#new'
+  resources :users, except: [:new]
+
+  get  'login',  to: 'sessions#new'
+  post 'login',  to: 'sessions#create'
+  get 'logout', to: 'sessions#destroy'
+
+
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 

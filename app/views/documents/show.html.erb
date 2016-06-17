@@ -1,0 +1,30 @@
+<table class="table table-hover">
+	  <thead>
+	    <tr>
+	      <th> </th>
+	      <th>Documento</th>
+	      <th>Tipo</th>
+	      <th>Data de Criação</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <th scope="row"><span class="glyphicon glyphicon-unchecked" aria-hidden="true"></span></th>
+	      <td><%= link_to @document.name, @document.uploaded_file.url %></td>
+	      <td>
+	        <%if @document.typeDoc == "Compra e Venda" %>
+	      		<span class="label label-primary">Compra e Venda</span>
+	      	<%elsif @document.typeDoc == "Pessoal" %>
+	      		<span class="label label-warning">Pessoal</span>
+	      	<%elsif @document.typeDoc == "Aluguel" %>
+	      		<span class="label label-info">Aluguel</span>
+	      	<%elsif @document.typeDoc == "Contas" %>
+	      		<span class="label label-success">Contas</span>
+	      	<%elsif @document.typeDoc == "Outros" %>
+	      		<span class="label label-default">Outros</span>
+	      	<% end %>
+	      </td>
+	      <td><%= @document.created_at %></td>
+	    </tr>
+	  </tbody>
+</table>

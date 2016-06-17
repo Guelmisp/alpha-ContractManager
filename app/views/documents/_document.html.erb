@@ -1,0 +1,36 @@
+<table class="table table-hover">
+	  <thead>
+	    <tr>
+	      <th><input type="checkbox" name="select-all" id="select-all"></th>
+	      <th>Link</th>
+	      <th>Arquivo</th>
+	      <th>Tipo</th>
+	      <th>Data de Criação</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	  <% obj.each do |document| %>
+	  	<%if logged_in? && current_user == document.user %>
+	    <tr>
+	      <td><%= check_box_tag "documents_ids[]", document.id %></td>
+	      <td><%= link_to 'Doc', document.uploaded_file.url %></td>
+	      <td><%= document.name %></td>
+	      <td>
+	        <%if document.typeDoc == "Compra e Venda" %>
+	      		<span class="label label-primary">Compra e Venda</span>
+	      	<%elsif document.typeDoc == "Pessoal" %>
+	      		<span class="label label-warning">Pessoal</span>
+	      	<%elsif document.typeDoc == "Aluguel" %>
+	      		<span class="label label-info">Aluguel</span>
+	      	<%elsif document.typeDoc == "Contas" %>
+	      		<span class="label label-success">Contas</span>
+	      	<%elsif document.typeDoc == "Outros" %>
+	      		<span class="label label-default">Outros</span>
+	      	<% end %>
+	      </td>
+	      <td><%= document.created_at %></td>
+	    </div>
+	  <% end %>
+	  <% end %>
+	  </tbody>
+</table>

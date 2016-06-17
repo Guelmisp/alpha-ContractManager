@@ -1,0 +1,40 @@
+<aside class="bg2">
+  <div class="container">
+  <div class="panelOffset">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="panel panel-primary "> 
+        <div class="panel-heading">
+            <h3 class="panel-title text-center">Editando sua Conta</h3>
+        </div>
+          <div class="panel-body">
+            <div class="logoimg text-center"> <img src="assets/logo_cm_black.png" alt="logo" /></div><br>
+            <%= simple_form_for @user do |f| %>
+
+              <%= f.input :username,
+                    label: 'Usuário: ',
+                    placeholder: 'Digite o nome do usuário',
+                    error: 'O Nome do usuario é obrigatório' %>
+
+                <%= f.input :email,
+                    label: 'E-mail: ',
+                    placeholder: 'digite o seu e-mail',
+                    error: 'email obrigatorio' %>
+
+                 <%= f.input :password, 
+                     label: 'Senha:',
+                     placeholder: 'Digite a sua senha',
+                     error: 'O campo senha é obrigatório' %>
+
+                <br><br><br>
+                <center>
+                     <button type="submit" class="btn btn-success">Atualizar</button>
+                    <%= link_to "Cancelar", :back, {:class=>"btn btn-default"} %>
+                </center>
+            <% end %>
+          </div>
+
+        </div>
+
+      </div>
+  </div>
+</aside>
