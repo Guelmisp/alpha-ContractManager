@@ -1,6 +1,8 @@
 class DocumentsController < ApplicationController
 
 	before_action :set_document, only: [:edit, :update, :show, :destroy]
+	before_action :require_user
+	before_action :require_same_user, only: [:edit, :update, :destroy, :destroy_multiple] 
 
 	def index
 		@documents = Document.paginate(page: params[:page], per_page: 3)
@@ -56,12 +58,28 @@ class DocumentsController < ApplicationController
 	    end
 	end
 
+	def edit_view
+
+		@document = Document.find(params[:id])
+		respond_to do |format|
+	      format.html { redirect_to redirect_to edit_document_path(@document) }
+	      format.json { head :no_content }
+	    end
+		
+		
+	end
+
 	private
 	def set_document
 		@document = Document.find(params[:id])	
 	end
 	def document_params
 		params.require(:document).permit(:name, :tag, :typeDoc, :uploaded_file)
+	end
+	def require_same_user
+		if current_user != @document.user
+			flash[:danger] = "Voce do pode deletar seus documentos"
+			redirect_to root_path
 	end
  
 end

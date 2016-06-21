@@ -9,10 +9,10 @@ class ApplicationController < ActionController::Base
 
   	@current_user ||= User.find(session[:user_id]) if session[:user_id]
 
-  end
+  end  
 
   def logged_in?
-
+  
   	!!current_user
 
   end
@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
   def require_user
   	if !logged_in?
   		flash[:danger] = "Voce deve estar logado para fazer essa ação"
-  		redirect_to root_path
+  		redirect_to   
   	end
   end
 

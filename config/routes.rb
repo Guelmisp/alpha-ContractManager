@@ -19,12 +19,15 @@ Rails.application.routes.draw do
     end
   end
 
+  post 'documents/edit_view/:id' => 'documents#edit_view'
+
   get 'signup', to: 'users#new'
   resources :users, except: [:new]
 
   get  'login',  to: 'sessions#new'
   post 'login',  to: 'sessions#create'
   get 'logout', to: 'sessions#destroy'
+
 
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
