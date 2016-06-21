@@ -85,26 +85,7 @@
 		<!-- /Documentos, Alertas e Upload -->
 
 		<!-- Edit and Share -->
-		<div class="col-md-3" id="editDiv"> 
-
-		<script>
-			$(document).ready(function() {    
-			    $(":checkbox").click(function(){
-			        
-			        var id = $(this).attr('id');
-
-                    jQuery.ajax({
-					  data: 'id=' + id,
-					  dataType: 'script',
-					  type: 'post',
-					  url: "/documents/edit_view"
-					});
-
-			    });    
-			});
- 		</script>
-
-
+		<div class="col-md-3" id="editDiv">
 			
 		</div>
 		<!-- /Edit and Share -->

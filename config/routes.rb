@@ -19,8 +19,6 @@ Rails.application.routes.draw do
     end
   end
 
-  post 'documents/edit_view/:id' => 'documents#edit_view'
-
   get 'signup', to: 'users#new'
   resources :users, except: [:new]
 

@@ -58,17 +58,6 @@ class DocumentsController < ApplicationController
 	    end
 	end
 
-	def edit_view
-
-		@document = Document.find(params[:id])
-		respond_to do |format|
-	      format.html { redirect_to redirect_to edit_document_path(@document) }
-	      format.json { head :no_content }
-	    end
-		
-		
-	end
-
 	private
 	def set_document
 		@document = Document.find(params[:id])	
