@@ -4,7 +4,7 @@
  *
  */
  
-(function($) {
+$(function($) {
  
     $.fn.parallax = function(options) {
  

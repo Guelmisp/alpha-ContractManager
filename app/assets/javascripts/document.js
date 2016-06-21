@@ -1,16 +1,16 @@
 $(function() {
-    $('#select-all').click(function(event) {
-  if(this.checked) {
-      // Iterate each checkbox
+  $('#select-all').click(function(event) {
+    if(this.checked) {
+        // Iterate each checkbox
+        $(':checkbox').each(function() {
+            this.checked = true; 
+          });
+    }
+    else {
       $(':checkbox').each(function() {
-          this.checked = true; 
+            this.checked = false;
         });
-  }
-  else {
-    $(':checkbox').each(function() {
-          this.checked = false;
-      });
-  }
+    }
   });  
     
 });
