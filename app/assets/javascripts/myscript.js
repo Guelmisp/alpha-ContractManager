@@ -4,7 +4,7 @@
  *
  */
  
-$(function($) {
+(function($) {
  
     $.fn.parallax = function(options) {
  
@@ -42,8 +42,31 @@ $(function($) {
         });
     }
 }(jQuery));
+    $('.bg1,.bg2').parallax({
+    	speed :	0.15
+    });
+});
 
-$('.bg1,.bg2').parallax({
-	speed :	0.15
+/**
+ * 
+ * Check all checkboxes
+ *
+ */
+
+$(function() {
+  $('#select-all').click(function(event) {
+    if(this.checked) {
+        // Iterate each checkbox
+        $(':checkbox').each(function() {
+            this.checked = true; 
+          });
+    }
+    else {
+      $(':checkbox').each(function() {
+            this.checked = false;
+        });
+    }
+  });  
+    
 });
-});
+
