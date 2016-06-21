@@ -42,10 +42,11 @@
         });
     }
 }(jQuery));
-    $('.bg1,.bg2').parallax({
-    	speed :	0.15
-    });
+
+$('.bg1,.bg2').parallax({
+	speed :	0.15
 });
+
 
 /**
  * 
