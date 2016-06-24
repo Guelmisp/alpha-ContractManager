@@ -47,14 +47,12 @@ $('.bg1,.bg2').parallax({
 	speed :	0.15
 });
 
-
 /**
  * 
  * Check all checkboxes
  *
  */
-
-$(function() {
+$(document).bind('page:load', function() {
   $('#select-all').click(function(event) {
     if(this.checked) {
         // Iterate each checkbox
@@ -69,5 +67,14 @@ $(function() {
     }
   });  
     
+})
+
+$(document).ready(function() {    
+    $(":checkbox").click(function(){
+        
+        var id = $(this).attr('id');
+        $('#editDiv').append("<%= j render(partial: 'documents/edit') %>");
+
+    });    
 });
 

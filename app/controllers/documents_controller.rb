@@ -2,7 +2,7 @@ class DocumentsController < ApplicationController
 
 	before_action :set_document, only: [:edit, :update, :show, :destroy]
 	before_action :require_user
-	before_action :require_same_user, only: [:edit, :update, :destroy, :destroy_multiple] 
+	before_action :require_same_user, only: [:edit, :update, :destroy] 
 
 	def index
 		@documents = Document.paginate(page: params[:page], per_page: 3)
@@ -13,6 +13,11 @@ class DocumentsController < ApplicationController
 	end
 
 	def edit
+
+		respond_to do |format|
+		    format.html # show_edit.html.erb
+		    format.js   # show_edit.js.erb
+		end
 
 	end
 
@@ -69,6 +74,7 @@ class DocumentsController < ApplicationController
 		if current_user != @document.user
 			flash[:danger] = "Voce do pode deletar seus documentos"
 			redirect_to root_path
+		end
 	end
  
 end
