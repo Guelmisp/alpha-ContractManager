@@ -69,7 +69,7 @@ $(document).bind('page:load', function() {
     
 })
 
-$(document).ready(function() {    
+$(document).bind('page:load', function() {    
     $(":checkbox").click(function(){
         
         var id = $(this).attr('id');

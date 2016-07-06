@@ -38,7 +38,7 @@ class UsersController < ApplicationController
 
 	def show
 		
-		@user_documents = @user.documents.paginate(page: params[:page], per_page: 3)
+		@user_documents = @user.aluguels.paginate(page: params[:page], per_page: 3)
 
 	end
 

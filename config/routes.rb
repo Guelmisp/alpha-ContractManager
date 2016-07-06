@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   root 'pages#home'
   get  'contractsHome',  to: 'pages#contractsHome'
   get  'contractsAbout', to: 'pages#contractsAbout'
+  get  'rent', to: 'pages#rent'
 
 
   resources :documents do
@@ -18,6 +19,8 @@ Rails.application.routes.draw do
       delete 'destroy_multiple'
     end
   end
+
+  resources :aluguels
 
   get 'signup', to: 'users#new'
   resources :users, except: [:new]

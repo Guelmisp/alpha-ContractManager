@@ -1,6 +1,7 @@
 class Document < ActiveRecord::Base
 
-	belongs_to :user
+    belongs_to :aluguel
+
 	validates :name, presence: true, length: {minimum: 3, maximum: 25}
 	validates :tag, presence: true
 	has_attached_file :uploaded_file              
@@ -12,6 +13,5 @@ class Document < ActiveRecord::Base
              "application/vnd.openxmlformats-officedocument.wordprocessingml.document", 
              "text/plain"],
               :message => ', apenas arquivos do tipo PDF, EXCEL, WORD or TEXT '
-    validates :user_id, presence: true
 
 end

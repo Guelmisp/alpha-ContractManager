@@ -23,9 +23,7 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"> Usuário</span></a>
           <ul class="dropdown-menu">
             <% if logged_in? %>
-               <%= render 'users/show'%>
-
-              <li class="divider"></li>
+              
                <li> <i class="glyphicon glyphicon-user"> <%= link_to "Perfil", user_path(current_user) %> </i></li>
                <li class="divider"></li>
                <li> <i class="glyphicon glyphicon-edit"> <%= link_to "Editar Usuário", edit_user_path(current_user) %> </i></li>

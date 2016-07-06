@@ -1,3 +1,7 @@
+<div id="wrap">
+<br><br><br>
+<h1>Upload de Documento</h1>
+
 <%= simple_form_for @document, :html => {multipart: true} do |f| %>
 
     <%= f.input :name,
@@ -11,14 +15,14 @@
         hint: 'As tags serão úteis na hora de buscar seus arquivos',
         error: 'tags são obrigatórias' %>
 
-     <%= f.input :uploaded_file, 
-         label: 'Upload de Arquivo',
+     <%= f.file_field :uploaded_file, 
+         label: 'Selecione seu arquivo',
          hint: 'Apenas documentos do tipo pdf, word, txt sao permitidos',
          error: 'Arquivos são obrigatórios' %>
 
     <div class="field">
         <%= f.label :typeDoc,
-        label: 'Tipo do Arquivo'%>
+        label: 'Tipo de Aluguel'%>
         <br>
         <%= f.radio_button :typeDoc, 'Compra e Venda'%> 
         <span class="label label-primary">Compra e Venda</span>
@@ -39,3 +43,4 @@
     </center>
 
 <% end %>
+</div>

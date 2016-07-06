@@ -1,0 +1,68 @@
+<div id="wrap">
+<!-- Section -->
+<section>
+	
+	<!-- /Inicio Tabs -->
+	<div class="tresColunas">
+
+		<!-- Links -->
+		<div class="col-md-2"> 
+			<%= render 'layouts/navSide' %>
+		</div>
+		<!-- /Links -->
+
+		<!-- Documentos, Alertas e Upload -->
+		<div class="col-md-8 box-shadow--2dp"> 
+			<div class="tabbable"> <!-- Only required for left/right tabs -->
+			  <ul class="nav nav-tabs nav-justified">
+			    <li class="active"><a href="#tab1" data-toggle="tab">Algueis</a></li>
+			    <li><a href="#tab2" data-toggle="tab">Upload Aluguel</a></li>
+			  </ul>
+			  <div class="tab-content">
+			    
+			    <!-- Documentos -->
+			    <div class="tab-pane active" id="tab1">
+
+			      <%= form_tag destroy_multiple_documents_path, method: :delete do %>
+
+				      <%= render 'aluguels/alugueis', obj: @aluguels %>
+				      
+				      <div align="right">
+	 				    <%= button_tag(type: 'submit', class: "btn btn-default") do %>
+	  				     <span class="glyphicon glyphicon-trash"></span> 
+					    <% end %>
+					  </div>
+				   <% end %>
+			      
+					<div align="center">
+						<%= will_paginate @aluguels %>
+					</div>
+			     	
+			    </div>
+			    <!-- /Documentos -->
+
+			    <!-- Upload -->
+			    <div class="tab-pane" id="tab2">
+
+			      <%= render 'aluguels/new' %>
+			      
+			    </div>
+			    <!-- /Upload -->
+
+			  </div>
+			</div>
+		</div>
+		<!-- /Documentos, Alertas e Upload -->
+
+		<!-- Edit and Share -->
+		<div class="col-md-3" id="editDiv">
+			
+		</div>
+		<!-- /Edit and Share -->
+
+	</div>
+	<!-- /Fim Tabs -->
+
+</section>
+<!-- /Section -->
+</div>

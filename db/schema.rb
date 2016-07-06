@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160610005911) do
+ActiveRecord::Schema.define(version: 20160706221542) do
+
+  create_table "aluguels", force: :cascade do |t|
+    t.string   "imovel"
+    t.string   "local"
+    t.float    "valor"
+    t.string   "locador"
+    t.string   "locatario"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+  end
 
   create_table "documents", force: :cascade do |t|
     t.string   "name"
@@ -23,7 +34,7 @@ ActiveRecord::Schema.define(version: 20160610005911) do
     t.string   "uploaded_file_content_type"
     t.integer  "uploaded_file_file_size"
     t.datetime "uploaded_file_updated_at"
-    t.integer  "user_id"
+    t.integer  "aluguel_id"
   end
 
   create_table "users", force: :cascade do |t|
