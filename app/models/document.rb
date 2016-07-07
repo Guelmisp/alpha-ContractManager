@@ -13,5 +13,6 @@ class Document < ActiveRecord::Base
              "application/vnd.openxmlformats-officedocument.wordprocessingml.document", 
              "text/plain"],
               :message => ', apenas arquivos do tipo PDF, EXCEL, WORD or TEXT '
+    
 
 end

@@ -3,7 +3,7 @@
 
 <%= simple_form_for @aluguel do |f| %>
 
-    <%= f.simple_fields_for @document do |d| %>
+    <%= f.simple_fields_for :document, Document.new do |d| %>
         <%= d.input :name,
             label: 'Nome do Arquivo: ',
             placeholder: 'Digite o nome do arquivo',

@@ -5,7 +5,7 @@
 	      <th><input type="checkbox" name="select-all" id="select-all"></th>
 	      <th>Link</th>
 	      <th>Nome</th>
-	      <th>Imovel</th>
+	      <th>Imóvel</th>
 	      <th>Endereço</th>
 	      <th>Locador</th>
 	      <th>Locatário</th>
@@ -15,7 +15,7 @@
 	  </thead>
 	  <tbody>
 	  <% obj.each do |aluguel| %>
-	  	<%if logged_in? && current_user == aluguel.user_id %>
+	  	<%if logged_in? && current_user.id == aluguel.user_id %>
 	    <tr>
 	      
 	      <td><%= check_box_tag "aluguels_ids[]", aluguel.id, false, :id => "#{aluguel.id}" %></td>
@@ -41,9 +41,10 @@
 	      <td><%= aluguel.valor %></td>
 
 	      <td><%= aluguel.document.created_at %></td>
-
-	  <% end %>
+	    </tr>
+	    <% end %>
 	  <% end %>
 	  </tbody>
 </table>
 </div>
+
