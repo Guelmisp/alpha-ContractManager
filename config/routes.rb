@@ -12,6 +12,10 @@ Rails.application.routes.draw do
   get  'contractsHome',  to: 'pages#contractsHome'
   get  'contractsAbout', to: 'pages#contractsAbout'
   get  'rent', to: 'pages#rent'
+  get  'buysell', to: 'pages#buysell'
+  get  'service', to: 'pages#service'
+  get  'other', to: 'pages#other'
+  get  'payment', to: 'pages#payment'
 
 
   resources :documents do
@@ -21,6 +25,11 @@ Rails.application.routes.draw do
   end
 
   resources :aluguels
+  resources :buysells
+  resources :services
+  resources :others
+  resources :payments
+
 
   get 'signup', to: 'users#new'
   resources :users, except: [:new]

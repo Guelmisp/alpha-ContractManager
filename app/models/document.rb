@@ -1,6 +1,10 @@
 class Document < ActiveRecord::Base
 
     belongs_to :aluguel
+    belongs_to :buysell
+    belongs_to :service
+    belongs_to :other
+    belongs_to :payment
 
 	validates :name, presence: true, length: {minimum: 3, maximum: 25}
 	validates :tag, presence: true

@@ -12,7 +12,9 @@ class PagesController < ApplicationController
 		@aluguels = Aluguel.paginate(page: params[:page], per_page: 5)
 	end
 
-	def buySell
+	def buysell
+		@buysell  = Buysell.new
+		@buysells = Buysell.paginate(page: params[:page], per_page: 5)
 	end
 
 	def service
@@ -21,10 +23,10 @@ class PagesController < ApplicationController
 	def other
 	end
 
-	def payments
+	def payment
 	end
 
-	def protocols
+	def protocol
 	end
 
 	def contractsAbout

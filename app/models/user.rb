@@ -1,6 +1,11 @@
 class User < ActiveRecord::Base
 
 	has_many :aluguels
+	has_many :buysells
+	has_many :services
+	has_many :others
+	has_many :payments
+	
 	before_save { self.email = email.downcase }
 	validates :username, presence: true, uniqueness: {case_sensitive: false}, 
 			  length: {minimum: 3, maximum: 25} 
