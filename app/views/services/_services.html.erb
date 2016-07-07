@@ -1,0 +1,41 @@
+<div id="wrap">
+<table class="table table-hover">
+	  <thead>
+	    <tr>
+	      <th><input type="checkbox" name="select-all" id="select-all"></th>
+	      <th>Link</th>
+	      <th>Nome</th>
+	      <th>Contratante</th>
+	      <th>Contratado</th>
+	      <th>Serviço</th>
+	      <th>Valor</th>
+	      <th>Data de Criação</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	  <% obj.each do |service| %>
+	  	<%if logged_in? && current_user.id == service.user_id %>
+	    <tr>
+	      
+	      <td><%= check_box_tag "aluguels_ids[]", service.id, false, :id => "#{service.id}" %></td>
+	      
+	      <td><%= link_to 'Doc', service.document.uploaded_file.url %></td>
+	      
+	      <td><%= service.document.name %></td>
+
+	      <td><%= service.contratante %></td>
+
+	      <td><%= service.contratado %></td>
+
+	      <td><%= service.servico %></td>
+
+	      <td><%= service.valor %></td>
+
+	      <td><%= service.document.created_at %></td>
+	    </tr>
+	    <% end %>
+	  <% end %>
+	  </tbody>
+</table>
+</div>
+

@@ -25,7 +25,7 @@ class AluguelsController < ApplicationController
 			flash[:notice] = "O Contrato de Aluguel foi salvo com sucesso"
 			redirect_to contractsHome_path(@aluguel)
 		else
-			render 'new'
+			render 'pages/rent'
 		end
 
 	end
@@ -45,7 +45,7 @@ class AluguelsController < ApplicationController
 	end
 
 	def require_same_user
-		if current_user != @document.user
+		if current_user != @aluguel.user
 			flash[:danger] = "Voce do pode deletar seus documentos"
 			redirect_to root_path
 		end

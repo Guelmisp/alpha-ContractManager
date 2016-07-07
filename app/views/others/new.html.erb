@@ -1,0 +1,36 @@
+<div id="wrap">
+<h3><center>Novo Contrato: Outros</center></h3>
+
+<%= simple_form_for @other do |f| %>
+
+    <%= f.simple_fields_for :document, Document.new do |d| %>
+        <%= d.input :name,
+            label: 'Nome do Arquivo: ',
+            placeholder: 'Digite o nome do arquivo',
+            error: 'O Nome do arquivo é obrigatório' %>
+
+        <%= d.input :tag,
+            label: 'Tags de busca: ',
+            placeholder: 'Por exemplo: compra e venda, autocad, maio de 2016',
+            hint: 'As tags serão úteis na hora de buscar seus arquivos',
+            error: 'tags são obrigatórias' %>
+
+         <%= d.file_field :uploaded_file, 
+         label: 'Selecione seu arquivo',
+         hint: 'Apenas documentos do tipo pdf, word, txt sao permitidos',
+         error: 'Arquivos são obrigatórios' %>
+    <% end %>
+    <br>
+    <%= f.input :descricao,
+        label: 'Descricao do Documento: ',
+        placeholder: 'Digite a descricao:',
+        error: 'A descricao é obrigatorio' %>
+
+    <br><br><br>
+    <center>
+         <button type="submit" class="btn btn-success">Salvar Documento</button>
+        <%= link_to "Cancelar", :back, {:class=>"btn btn-default"} %>
+    </center>
+
+<% end %>
+</div>

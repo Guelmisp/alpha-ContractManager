@@ -18,12 +18,18 @@ class PagesController < ApplicationController
 	end
 
 	def service
+		@service  = Service.new
+		@services = Service.paginate(page: params[:page], per_page: 5)
 	end
 
 	def other
+		@other  = Other.new
+		@others = Other.paginate(page: params[:page], per_page: 5)
 	end
 
 	def payment
+		@payment  = Payment.new
+		@payments = Payment.paginate(page: params[:page], per_page: 5)
 	end
 
 	def protocol

@@ -1,0 +1,60 @@
+<div id="wrap">
+<h3><center>Novo Recibo: Pagamento</center></h3>
+
+<%= simple_form_for @payment do |f| %>
+
+    <%= f.simple_fields_for :document, Document.new do |d| %>
+        <%= d.input :name,
+            label: 'Nome do Arquivo: ',
+            placeholder: 'Digite o nome do arquivo',
+            error: 'O Nome do arquivo é obrigatório' %>
+
+        <%= d.input :tag,
+            label: 'Tags de busca: ',
+            placeholder: 'Por exemplo: compra e venda, autocad, maio de 2016',
+            hint: 'As tags serão úteis na hora de buscar seus arquivos',
+            error: 'tags são obrigatórias' %>
+
+         <%= d.file_field :uploaded_file, 
+         label: 'Selecione seu arquivo',
+         hint: 'Apenas documentos do tipo pdf, word, txt sao permitidos',
+         error: 'Arquivos são obrigatórios' %>
+    <% end %>
+    <br>
+    <div class="field">
+    	<%= f.label :tipo,
+    	label: 'Tipo do pagamento'%>
+    	<br>
+    	 <%= f.radio_button :tipo, 'Agua/Luz/Telefone'%> 
+        <span class="label label-primary">Agua/Luz/Telefone</span>
+        <%= f.radio_button :tipo, 'Restaurante'%> 
+        <span class="label label-warning">Restaurante</span>
+        <%= f.radio_button :tipo, 'Supermercado'%> 
+        <span class="label label-info">Supermercado</span>
+        <%= f.radio_button :tipo, 'Farmácia'%> 
+        <span class="label label-success">Farmácia</span>
+        <%= f.radio_button :tipo, 'Viagens'%> 
+        <span class="label label-default">Viagens</span>
+        <%= f.radio_button :tipo, 'Outros'%> 
+        <span class="label label-danger">Outros</span>
+
+    </div>
+    <br>
+    <%= f.input :local,
+        label: 'Local do Pagamento: ',
+        placeholder: 'Digite o local do imovel',
+        error: 'O local é obrigatorio' %>
+
+    <%= f.input :valor,
+        label: 'Valor do pagamento: ',
+        placeholder: 'Digite o valor',
+        error: 'O valor é obrigatorio' %>
+
+    <br><br><br>
+    <center>
+     	 <button type="submit" class="btn btn-success">Salvar Documento</button>
+	  	<%= link_to "Cancelar", :back, {:class=>"btn btn-default"} %>
+	</center>
+
+<% end %>
+</div>

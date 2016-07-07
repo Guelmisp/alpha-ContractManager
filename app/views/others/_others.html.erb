@@ -1,0 +1,33 @@
+<div id="wrap">
+<table class="table table-hover">
+	  <thead>
+	    <tr>
+	      <th><input type="checkbox" name="select-all" id="select-all"></th>
+	      <th>Link</th>
+	      <th>Nome</th>
+	      <th>Descrição</th>
+	      <th>Data de Criação</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	  <% obj.each do |other| %>
+	  	<%if logged_in? && current_user.id == other.user_id %>
+	    <tr>
+	      
+	      <td><%= check_box_tag "others_ids[]", other.id, false, :id => "#{other.id}" %></td>
+	      
+	      <td><%= link_to 'Doc', other.document.uploaded_file.url %></td>
+	      
+	      <td><%= other.document.name %></td>
+
+	      <td><%= other.descricao %></td>
+
+	      <td><%= other.document.created_at %></td>
+
+	    </tr>
+	    <% end %>
+	  <% end %>
+	  </tbody>
+</table>
+</div>
+

@@ -24,7 +24,7 @@ class BuysellsController < ApplicationController
 			flash[:notice] = "O Contrato de compra e venda foi salvo com sucesso"
 			redirect_to contractsHome_path(@buysell)
 		else
-			render 'new'
+			render 'pages/buysell'
 		end
 
 	end

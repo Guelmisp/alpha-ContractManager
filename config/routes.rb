@@ -11,11 +11,11 @@ Rails.application.routes.draw do
   root 'pages#home'
   get  'contractsHome',  to: 'pages#contractsHome'
   get  'contractsAbout', to: 'pages#contractsAbout'
-  get  'rent', to: 'pages#rent'
-  get  'buysell', to: 'pages#buysell'
-  get  'service', to: 'pages#service'
-  get  'other', to: 'pages#other'
-  get  'payment', to: 'pages#payment'
+  get  'rent',           to: 'pages#rent'
+  get  'buysell',        to: 'pages#buysell'
+  get  'service',        to: 'pages#service'
+  get  'other',          to: 'pages#other'
+  get  'payment',        to: 'pages#payment'
 
 
   resources :documents do

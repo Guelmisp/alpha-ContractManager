@@ -17,7 +17,7 @@
 	  	<%if logged_in? && current_user.id == buysell.user_id %>
 	    <tr>
 	      
-	      <td><%= check_box_tag "aluguels_ids[]", buysell.id, false, :id => "#{buysell.id}" %></td>
+	      <td><%= check_box_tag "buysells_ids[]", buysell.id, false, :id => "#{buysell.id}" %></td>
 	      
 	      <td><%= link_to 'Doc', buysell.document.uploaded_file.url %></td>
 	      

@@ -1,0 +1,45 @@
+<table class="table table-hover">
+	  <thead>
+	    <tr>
+	      <th><input type="checkbox" name="select-all" id="select-all"></th>
+	      <th>Link</th>
+	      <th>Nome</th>
+	      <th>Tipo</th>
+	      <th>Local</th>
+	      <th>Valor</th>
+	      <th>Data de Criação</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	  <% obj.each do |payment| %>
+	  	<%if logged_in? && current_user.id == payment.user_id %>
+	    <tr>
+	      <td><%= check_box_tag "payments_ids[]", payment.document.id, false, :id => "#{payment.id}" %></td>
+	      <td><%= link_to 'Doc', payment.document.uploaded_file.url %></td>
+	      <td><%= payment.document.name %></td>
+	      <td>
+	        <%if payment.tipo == "Agua/Luz/Telefone" %>
+	      		 <span class="label label-primary">Agua/Luz/Telefone</span>
+	      	<%elsif payment.tipo == "Restaurante" %>
+	      		<span class="label label-warning">Restaurante</span>
+	      	<%elsif payment.tipo == "Supermercado" %>
+	      		<span class="label label-info">Supermercado</span>
+	      	<%elsif payment.tipo == "Farmácia" %>
+	      		<span class="label label-success">Farmácia</span>
+	      	<%elsif payment.tipo == "Viagens" %>
+	      		<span class="label label-default">Viagens</span>
+	        <%elsif payment.tipo == "Outros" %>
+	      		<span class="label label-danger">Outros</span>
+	      	<% end %>
+	      </td>
+
+	      <td><%= payment.local %></td>
+	      
+	      <td><%= payment.valor %></td>
+
+	      <td><%= payment.document.created_at %></td>
+	    </div>
+	  <% end %>
+	  <% end %>
+	  </tbody>
+</table>
